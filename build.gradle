@@ -1,0 +1,21 @@
+defaultTasks 'clean','build', 'run'
+
+def jdkVersion = 1.7
+def enc = 'UTF-8'
+
+apply {
+    plugin 'scala'
+    plugin 'application'
+}
+
+mainClassName = 'ActorSample'
+
+configurations { catalinaAnt }
+
+repositories { mavenCentral() }
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.10.3'
+    compile 'com.typesafe.akka:akka-actor_2.10:2.2.3'
+}
+
